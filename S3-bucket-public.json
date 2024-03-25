@@ -1,4 +1,4 @@
-# instead public one object using ACL do for all bucket at once
+// instead public one object using ACL do for all bucket at once using bucket policy
 
 {
     "Version": "2012-10-17",
