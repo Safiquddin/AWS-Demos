@@ -35,21 +35,22 @@ s3_read_access.json
         "s3:ListAllMyBuckets",
         "s3:GetBucketLocation"
       ],
-      "Resource": "*"
+      "Resource": ["arn:aws:s3:::*"]
     },
     {
       "Effect": "Allow",
       "Action": [
-        "s3:GetObject",
-        "s3:ListBucket"
+        "s3:Ge*",
+        "s3:List*"
       ],
       "Resource": [
         "arn:aws:s3:::cfst-3035-532474dfd794bc23646fe351465d-s3bucketdev-asuul672v33k/*",
         "arn:aws:s3:::cfst-3035-532474dfd794bc23646fe351465d-s3bucketdev-asuul672v33k"
-      ]
-    }
-  ]
+      ]
+    }
+  ]
 }
+
 aws iam create-policy --policy-name dev_s3_read-access.json --policy-document file://dev_s3_read-access.json
 Copy - arn:aws:iam::222095789759:policy/DevS3ReadAccess
 aws iam attach-role-policy --role-name DEV_ROLE --policy-arn "arn:aws:iam::222095789759:policy/DevS3ReadAccess"
